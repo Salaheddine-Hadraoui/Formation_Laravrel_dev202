@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Homecontroller;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileAuth;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\testController;
@@ -10,34 +11,36 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/posts',[PostController::class,'index']);
+Route::get('/posts/{id}',[PostController::class,'show']);
 
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// });
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+// Route::get('/about', function () {
+//     return view('about');
+// })->name('about');
 
-Route::get('/posts/{id}',function (string $id){
-    return $id;
-});
+// Route::get('/posts/{id}',function (string $id){
+//     return $id;
+// });
 
-Route::get('/posts/{id}/{livre}',function ($id, $livre ){
-    return $id. ' est livre ' .$livre;
-});
+// Route::get('/posts/{id}/{livre}',function ($id, $livre ){
+//     return $id. ' est livre ' .$livre;
+// });
 
-Route::get('/posts/{id}',function ( $id){
-    $posts = [
-        1 =>['title'=>'Laravel'],
-        2 =>['title'=>'React']
-    ];
-    return view('posts.show',['data'=>$posts[$id]]);
-});
+// Route::get('/posts/{id}',function ( $id){
+//     $posts = [
+//         1 =>['title'=>'Laravel'],
+//         2 =>['title'=>'React']
+//     ];
+//     return view('posts.show',['data'=>$posts[$id]]);
+// });
 
 
-Route::get('/blog/{id}',[Homecontroller::class,'Home'])->name('home');
-Route::get('/article/{id}',[Homecontroller::class,'Article']);
+// Route::get('/blog/{id}',[Homecontroller::class,'Home'])->name('home');
+// Route::get('/article/{id}',[Homecontroller::class,'Article']);
 
 
 
