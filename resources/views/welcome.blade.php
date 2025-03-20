@@ -1,5 +1,5 @@
 @extends('layout')
     <body>
-    
-    </body><h1>Welcome to laravel</h1>
+        <h1>Welcome to laravel</h1>
+    </body>
 </html>
