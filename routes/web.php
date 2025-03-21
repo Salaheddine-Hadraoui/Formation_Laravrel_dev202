@@ -7,11 +7,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\testController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use PHPUnit\Framework\Attributes\PostCondition;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/posts',[PostController::class,'index']);
+Route::get('/',[PostController::class,'index']);
 Route::get('/posts/{id}',[PostController::class,'show']);
 
 // Route::get('/home', function () {
