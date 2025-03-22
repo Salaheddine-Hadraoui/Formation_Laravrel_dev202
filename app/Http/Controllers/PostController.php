@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -13,6 +14,11 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
+        foreach($posts as $post){
+            //$post->format_date = Carbon::parse($post['created_at'])->format('d M Y, h:i A');
+            $post->format_date = Carbon::parse($post['created_at'])->diffForHumans();
+        }
+        //$ posts_Titles = Post::pluck('title); it will only retrive all the titles from all the posts from DB
         return view('index',compact('posts'));
     }
 

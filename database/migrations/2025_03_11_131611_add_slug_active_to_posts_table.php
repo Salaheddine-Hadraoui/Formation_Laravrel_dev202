@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->string('slug');
-            $table->boolean('active')->default(true);
+            $table->enum('language',['en','ar','fr']);
         });
     }
 
@@ -25,9 +25,7 @@ return new class extends Migration
         
         Schema::create('posts',function (Blueprint $table){
             $table->dropColumn('slug');
-            $table->dropColumn('active');
-            $table->dropColumn('test');
-            $table->dropColumn('like');
+            $table->dropColumn('language');
         });
     }
 };

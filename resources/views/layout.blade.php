@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" 
+  style="background-color: #000000;
+opacity: 1;
+background-image:  linear-gradient(#444cf7 4px, transparent 4px), linear-gradient(to right, #444cf7 4px, #000000 4px);
+background-size: 80px 80px;
+color:white">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,7 +18,9 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     </head>
-  <body>
-    @yield('content')
+    <body>
+    <main class="bg-black w-fit mx-auto">
+      @yield('content')
+    </main>
   </body>
 </html>

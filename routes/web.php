@@ -10,7 +10,10 @@ use Illuminate\Http\Request;
 use PHPUnit\Framework\Attributes\PostCondition;
 
 Route::get('/',[PostController::class,'index']);
-Route::get('/posts/{id}',[PostController::class,'show']);
+Route::get('/posts/{id}',[PostController::class,'show'])->name('post-details');
+
+Route::view('/create-post','create');
+Route::post('/create-post',[PostController::class,'store'])->name('store.post');
 
 // Route::get('/home', function () {
 //     return view('home');

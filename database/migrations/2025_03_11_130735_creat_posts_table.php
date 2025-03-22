@@ -15,6 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('title',120);
             $table->string('content');
+            $table->string('author',70);
             $table->timestamps();
         });
     }
