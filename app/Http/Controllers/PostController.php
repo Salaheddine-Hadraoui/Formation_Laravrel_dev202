@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -35,7 +36,21 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post_infos = $request->validate([
+            'title'=>'required|string|min:4|unique:posts,title',
+            'content'=>'required|string|min:10',
+            'author'=>'required|string|min:4',
+            'slug'=>'nullable|string',
+            'language'=>'required|in:en,ar,fr',
+        ]);
+
+            if(empty($post_infos['slug'])){
+                $post_infos['slug'] = Str::slug($post_infos['title']);
+            }
+
+        Post::create($post_infos);
+        session()->flash('success', 'Post created successfully!');
+        return redirect()->route('index');
     }
 
     /**

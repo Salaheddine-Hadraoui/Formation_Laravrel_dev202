@@ -19,7 +19,7 @@ color:white">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     </head>
     <body>
-    <main class="bg-black w-fit mx-auto">
+    <main class="bg-black p-3 w-fit mx-auto">
       @yield('content')
     </main>
   </body>

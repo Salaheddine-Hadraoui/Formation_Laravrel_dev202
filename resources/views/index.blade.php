@@ -1,8 +1,18 @@
 @extends('layout')
 @section('content')
     <div class="mx-auto mt-12">
-        <div class="posts-container mx-auto p-2.5 pr-3 h-[30.4rem] w-fit overflow-y-scroll">
+        <div class="flex justify-between items-center">
             <h2 class="font-bold text-[3rem] p-2">Liste des Postes</h2>
+            <button class="h-fit">
+                <a class="text-lg border-2 border-white px-3 py-2 mr-4 flex justify-center items-center gap-2 hover:bg-white hover:text-black" href={{route('post.create')}}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+                    </svg>
+                    Add Post
+                </a>
+            </button>
+        </div>
+        <div class="posts-container p-2.5 pr-3 h-[30.4rem] w-fit overflow-y-scroll">
             <ul class="ms-12">
                 @if (empty($posts))
                     <li class="text-yellow-900">La table posts est vide</li>
