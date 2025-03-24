@@ -59,6 +59,10 @@ class PostController extends Controller
     public function show(string $id)
     {
         $ShowPost = Post::find($id);
+        if(! $ShowPost){
+            return redirect()->route('index')->with('Failed','Post doesnt exist !');
+        }
+        $ShowPost['format_date']= Carbon::parse($ShowPost['created_at'])->diffForHumans();
         return view('posts.show',compact('ShowPost'));
     }
 

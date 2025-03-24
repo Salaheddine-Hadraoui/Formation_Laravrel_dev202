@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" 
   style="color:white"
-  class="h-screen bg-cover bg-center bg-black
+  class="h-screen bg-cover bg-center bg-black"
   >
     <head>
         <meta charset="utf-8">
@@ -20,6 +20,7 @@
     <body>
     <main class="p-3 min-[750px]:w-3/4 mx-auto">
       @yield('content')
+      @yield('post-show')
     </main>
   </body>
 </html>
