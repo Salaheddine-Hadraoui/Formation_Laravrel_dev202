@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" 
-  style="background-color: #000000;
-opacity: 1;
-background-image:  linear-gradient(#444cf7 4px, transparent 4px), linear-gradient(to right, #444cf7 4px, #000000 4px);
-background-size: 80px 80px;
-color:white">
+  style="color:white"
+  class="h-screen bg-cover bg-center bg-black
+  >
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,10 +14,11 @@ color:white">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
+        <link rel="preload" href="{{ asset('assets-images/w-neon-yellow.png') }}" as="image">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     </head>
     <body>
-    <main class="bg-black p-3 w-fit mx-auto">
+    <main class="p-3 min-[750px]:w-3/4 mx-auto">
       @yield('content')
     </main>
   </body>

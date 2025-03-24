@@ -14,6 +14,7 @@ Route::get('/posts/{id}',[PostController::class,'show'])->name('post-details');
 
 Route::view('/create-post','posts.create')->name('post.create');
 Route::post('/create-post',[PostController::class,'store'])->name('post.store');
+Route::get('/delete-post/{id}',[PostController::class,'destroy'])->name('post.delete');
 
 // Route::get('/home', function () {
 //     return view('home');
